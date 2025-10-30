@@ -1,0 +1,17 @@
+{% extends 'base.html' %}{% block content %}
+<h2>Menu</h2>
+<ul class="menu-grid">
+{% for item in items %}
+<li class="card">
+  {% if item.image %}<img src="{{ item.image.url }}" alt="{{ item.name }}">{% else %}
+  <div class="placeholder">No image</div>{% endif %}
+  <div class="card-body">
+    <h3><a href="{{ item.get_absolute_url }}">{{ item.name }}</a></h3>
+    <p class="price">${{ item.price }}</p>
+    {% if item.description %}<p>{{ item.description|truncatechars:120 }}</p>{% endif %}
+    <a class="btn" href="{{ item.get_absolute_url }}">View details</a>
+  </div>
+</li>
+{% empty %}<p>No menu items yet. Add some in the admin.</p>{% endfor %}
+</ul>
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'base.html' %}{% block content %}
+<article class="item-detail"><header>
+<h2>{{ item.name }}</h2><p class="price price-lg">${{ item.price }}</p></header>
+{% if item.image %}<img class="detail-img" src="{{ item.image.url }}" alt="{{ item.name }}">{% endif %}
+{% if item.description %}<p>{{ item.description }}</p>{% endif %}
+<p><a href="/menu/">← Back to menu</a></p></article>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% load static %}
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Little Lemon</title>
+<link rel="stylesheet" href="{% static 'styles.css' %}">
+</head><body>
+<header class="site-header"><div class="container">
+<h1 class="logo"><a href="/">Little Lemon</a></h1>
+<nav class="main-nav">
+  <a href="/about/">About</a>
+  <a href="/menu/">Menu</a>
+  <a href="/book/">Book</a>
+</nav></div></header>
+<main class="container">{% block content %}{% endblock %}</main>
+<footer class="site-footer"><div class="container">
+<p>&copy; {% now 'Y' %} Little Lemon</p></div></footer>
+</body></html>
